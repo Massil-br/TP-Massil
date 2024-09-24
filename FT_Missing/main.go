@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func Ft_Missing(nums []int) int {
-	sort.Ints(nums)
-	var res int
-	for i := 0; i < len(nums); i++ {
-		if i != nums[i] {
-			res = i
-		}
+	number := len(nums)
+	expect := number * (number + 1) / 2
+
+	real := 0
+
+	for _, num := range nums {
+		real += num
 	}
-	return res
+
+	return expect - real
 }
 
 func main() {
